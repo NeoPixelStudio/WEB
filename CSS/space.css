@@ -1,0 +1,66 @@
+#space {
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#atmosphere {
+    position: relative;
+    margin-top: 15vh;
+}
+
+#atmosphere img {
+    width: 100vw;
+    object-fit: fill;
+    height: 50vh;
+    margin-bottom: -15vh;
+}
+
+.moon img {    
+    height: 10vh;
+    width: 100vw;
+    object-fit: fill;
+}
+
+#lottie_satellite {
+    position: absolute;
+    display: block;
+    margin-left: -75vw;
+    margin-top: 100vh;
+    z-index: 2;
+    max-width: 125px;
+}
+
+#lottie_astronaut {
+    position: absolute;
+    display: block;
+    margin-right: -75vw;
+    margin-top: -285vh;
+    z-index: 2;
+    max-width: 150px;
+}
+
+#lottie_spaceship {
+    transform: rotate(180deg);
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#lottie_portal {
+    max-width: 300px;
+    max-height: 300px;
+    margin: auto;
+    cursor: pointer;
+}
+
+@media (orientation: landscape) {
+    #lottie_portal {
+        margin: 0;
+        float: left;
+    }
+}

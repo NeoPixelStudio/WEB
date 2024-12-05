@@ -1,0 +1,517 @@
+/****Fonts****/
+
+/*ANTICLIMAX*/
+@font-face {
+    font-family: "pixel";
+    src: url('../resourses/fonts/ANTICLIMAX.TTF');
+}
+
+/*Nothing you could do*/
+@font-face {
+    font-family: "nothing";
+    src: url('../resourses/fonts/NothingYouCouldDo-Regular.ttf');
+}
+/*Helvetica Light*/
+@font-face {
+    font-family: "helvetical";
+    src: url('../resourses/fonts/HelveticaNeueLTCom-UltLt.ttf');
+}
+/***/
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: #000;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #0b0c12;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    font-family: 'pixel', sans-serif;
+    font-size: 4rem;
+    margin-top: 75px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
+
+h2 {
+    font-family: 'nothing', sans-serif;
+    font-size: 2.75rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    h2 {
+        font-size: 2.25rem;
+    }
+}
+
+h2 span {
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    color: #782aff;
+}
+
+h3 {
+    font-family: 'nothing', sans-serif;
+    font-size: 1.75rem;
+    text-align: center;
+    color: white;
+}
+
+a {
+    font-family: "Roboto", sans-serif;
+    text-decoration: underline;
+    color: white;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    font-family: 'helvetical', sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 50px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+}
+
+@media (orientation: portrait) {
+    p {
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    p {
+        font-size: 1.125rem;
+        line-height: 25px;
+    }
+}
+
+span {
+    font-family: 'helvetical', sans-serif;
+    font-size: 1.25rem;
+    color: white;
+    text-align: center;
+}
+
+.loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 100;
+}
+
+#icon_loader {
+    width: 150px;
+    height: 150px;
+    background-image: url('../resourses/img/neopixelstudio.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+/**************************/
+
+.choose {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    justify-content: center;
+    z-index: 4;
+    width: 100vw;
+    margin-bottom: 10vh;
+}
+
+.button {
+    padding: 0 30px;
+    margin-bottom: 10vh;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    transition: background-color 2s;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1080px) {
+    .button {
+        font-size: 3rem;
+    }
+}
+
+.button:hover {
+    background-color: white;
+}
+
+#button_beta {
+    position: flex;
+    flex-direction: column;
+}
+
+.info_beta {
+    position: absolute;
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 0 30px;
+    margin-top: 35px;
+}
+
+@media only screen and (min-width: 1080px) {
+    .info_beta {
+        font-size: 1rem;
+        margin-top: 50px;
+    }
+}
+
+.down_arrow {
+    position: absolute;
+    flex-direction: column;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto 10vh auto;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 4;
+    max-width: 75vw;
+    max-height: 25vh;
+    opacity: 1;
+}
+
+
+/**************************/
+
+#parallax {
+    perspective: 100px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    scroll-snap-align: end;
+}
+
+.parallax__layer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+#parallax__img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 30vh;
+}
+
+.parallax_layer_logo {
+    transform: translateZ(-450px) scale(5.5);
+    opacity: 0;
+    top: 100vh;
+    animation: appear 5s 3s forwards;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.parallax__layer__1 {
+    transform: translateZ(-350px) scale(4.5);
+    top: 400vh;
+}
+
+.parallax__layer__2 {
+    transform: translateZ(-300px) scale(4);
+    top: 400vh;
+}
+
+.parallax__layer__3 {
+    transform: translateZ(-250px) scale(3.5);
+    top: 400vh;
+}
+
+.parallax__layer__4 {
+    transform: translateZ(-200px) scale(3);
+    top: 375vh;
+}
+
+.parallax__layer__5 {
+    transform: translateZ(-150px) scale(3.5);
+    top: 375vh;
+}
+
+.parallax__layer__6 {
+    transform: translateZ(-100px) scale(3);
+    top: 375vh;
+}
+
+.parallax__layer__7 {
+    transform: translateZ(-50px) scale(3);
+    top: 370vh;
+}
+
+.parallax__layer__8 {
+    transform: translateZ(0px) scale(3.5);
+    top: 345vh;
+    z-index: 1;
+}
+
+.parallax__layer__ground1 {
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+    transform: translateZ(0px) scale(2.5);
+    top: 330vh;
+    perspective: 100px;
+}
+
+#floor1 {
+    background-image: url("../resourses/img/interactive/road1.svg");
+    width: 100vw;
+    height: 15vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 2vh;
+    transform: rotateX(45deg);
+}
+
+.parallax__layer__ground2 {
+    position: absolute;
+    width: 100vw;
+    height: 30vh;
+    transform: translateZ(0px) scale(2.5);
+    top: 350vh;
+    perspective: 100px;
+}
+
+#floor2 {
+    background-image: url("../resourses/img/interactive/road2.svg");
+    width: 100vw;
+    height: 23vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 20vh;
+    transform: rotateX(45deg);
+}
+
+@media (orientation: portrait) {
+    #floor2 {
+        background-size: 20vh;
+    }
+}
+
+.parallax__layer__ground3 {
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+    transform: translateZ(0px) scale(2.5);
+    top: 390vh;
+    perspective: 100px;
+}
+
+#floor3 {
+    background-image: url("../resourses/img/interactive/road1.svg");
+    width: 100vw;
+    height: 20vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 4vh;
+    transform: rotateX(20deg);
+}
+
+.parallax__layer__ground4 {
+    position: absolute;
+    width: 100vw;
+    height: 5vh;
+    transform: translateZ(0px) scale(2.5);
+    top: 415vh;
+    perspective: 100px;
+}
+
+#floor4 {
+    background-image: url("../resourses/img/interactive/road3.svg");
+    width: 100vw;
+    height: 10vh;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 2vh;
+    transform: rotateX(20deg);
+}
+
+
+/**3D**/
+
+#bld_nxs {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    top: 335vh;
+}
+
+
+/***/
+
+#trigger {
+    display: none;
+    height: 250px;
+    width: 100vw;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: var(--background); */
+    position: relative;
+}
+
+#enter {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-image: url('../resourses/img/interactive/enter.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.logo-footer {
+    background-image: url('../resourses/img/logo.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+}
+
+.mail {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.mail .icon {
+    background-image: url('../resourses/img/mail.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.numero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.numero .icon {
+    background-image: url('../resourses/img/whatsapp.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.copyright p {
+    font-size: 0.85rem;
+    padding: 5px 0;
+}
+
+.nameEmail,
+.number,
+.copyright {
+    color: white;
+}
