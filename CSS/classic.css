@@ -59,7 +59,7 @@
     }
 }
 
-#portal_container2 {
+#portal_container {
     display: grid;
     position: relative;
     width: 100vw;
@@ -68,13 +68,13 @@
 }
 
 @media (orientation: portrait) {
-    #portal_container2 {
+    #portal_container {
         grid-template-columns: auto;
         grid-row: auto auto;
     } 
 }
 
-#text_container2 {
+#text_container {
     font-size: 3vh;
     color: white !important;
     max-width: 250px;
@@ -83,7 +83,7 @@
 }
 
 @media (orientation: portrait) {
-    #text_container2 {
+    #text_container {
         margin: auto;
         float: none;
     }

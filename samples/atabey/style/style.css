@@ -425,11 +425,6 @@ nav.navegacion-principal a:last-child:hover {
   background-image: url("../src/index/aire.jpg");
 }
 
-table {
-  /* border-collapse: collapse; */
-  /* border: 3px solid var(--main_color); */
-}
-
 th,
 td {
   padding: 10px;
