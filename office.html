@@ -2,24 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/style_3D.css" />
+    <link rel="stylesheet" href="./CSS/style_index.css" />
+    <link rel="stylesheet" href="./CSS/sky.css" />
+    <link rel="stylesheet" href="./CSS/space.css" />
+    <link rel="stylesheet" href="./CSS/classic.css" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q61X2HNJ90"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-211458541-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
-        gtag('config', 'G-Q61X2HNJ90');
+        gtag('config', 'UA-211458541-1');
     </script>
-    <!-- Google Analytics -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <title>Neo Pixel Studio 3D</title>
+
+    <title>Neo Pixel Studio</title>
+    <script src="./js/start.js"></script>
 </head>
 
 <body>
@@ -28,297 +35,18 @@
         <div id="icon_loader"></div>
     </div>
 
-    <div class="tutorial" id="tutorial1">
-        <div id="icon_hand1"></div>
-        <p>Desplázate a través de nuestra oficina</p>
-        <p class="continuar">continuar</p>
-    </div>
+    <div class="choose">
+        <div onclick="unlock()" id="classic_button" class="button"> <a>Clásico</a> </div>
 
-    <div class="tutorial" id="tutorial2">
-        <div id="icon_monitor-icon"></div>
-        <p>Accede a los apartados seleccionando</p>
-        <p class="continuar">continuar</p>
-    </div>
-
-    <div class="tutorial" id="tutorial3">
-        <div id="icon_hand2"></div>
-        <p>Desplaza para continuar leyendo</p>
-        <p class="continuar">continuar</p>
-    </div>
-
-    <div id="office_nxs">
-        <div id="loader3d">
-            <div id="icon_loader3d"></div>
+        <div onclick="unlock(), trigger()" id="interactive_button">
+            <div class="info_beta">(Beta)</div>
+            <div class="button"> <a>Interactivo</a> </div>
         </div>
     </div>
 
-    <div id="board">
-        <div id="main">
-            <div class="content">
-                <h1>Bienvenidos</h1>
-                <h2>Somos Neo Pixel</h2>
-                <p>
-                    Estamos aquí para brindarte el mejor servicio de desarrollo de páginas web, y manejo de redes
-                    sociales.
-                </p>
-                <p>
-                    Además, te brindamos asesoría en el manejo de tu marca, para que todo aquello que desees promocionar
-                    al mundo lo hagas de una manera ¡espectacular!.
-                </p>
-            </div>
-            <div class="bg_animated">
-                <lottie-player src="/resourses/3D/geometric-animation.json" background="transparent" speed="0.5"
-                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
-            </div>
-        </div>
+    <div id="whatsapp"></div>
 
-        <div id="ai">
-            <div class="content">
-                <h1>Diseno Asistido por IA</h1>
-
-
-                <div class="subtitle">
-                    <h2>Tu Ávatar Personalizado<br> <span>Desde $1</span> </h2>
-                </div>
-                <p>Obtén tu propio ávatar personalizado, compártenos tus fotos de referencia y deja volar tu 
-                    imaginación a nuevos personajes y lugares
-                </p>
-                <div class="content2">
-                    <div class="content_ai_section">
-                        <div id="ai_avatar"></div>
-                    </div>
-                    <div id="lottie_avatar">
-                        <lottie-player src="./resourses/img/classic/ia/ai_avatar.json" background="transparent"
-                            speed="1" loop autoplay>
-                        </lottie-player>
-                    </div>
-                    <div class="avatar_samples">
-                        <div id="avatar_sample3"></div>
-                        <div id="avatar_sample2"></div>
-                        <div id="avatar_sample1"></div>
-                    </div>
-                </div>
-
-
-                <div class="subtitle">
-                    <h2>Escalado de imágenes<br> <span>Desde $3</span> </h2>
-                </div>
-                <p>¿Requieres escalar una imagen o video sin alterarla?, lo hacemos por ti, con un unos excelentes
-                    resultados
-                </p>
-                <div class="content2">
-                    <div class="content_ai_section">
-                        <div id="ai_scale"></div>
-                    </div>
-                    <div id="lottie_scale">
-                        <lottie-player src="./resourses/img/classic/ia/ai_scale.json" background="transparent"
-                            speed="0.2" loop autoplay></lottie-player>
-                    </div>
-                    <div class="content_ai_section">
-                        <div id="ai_scale2"></div>
-                    </div>
-                </div>
-
-
-                <div class="subtitle">
-                    <h2>Colorización de imágenes en Blanco y Negro<br> <span>Desde $3</span> </h2>
-                </div>
-                <p>No pierdas la oportunidad de dar nueva vida a esas fotos que tantos recuerdos te traen</p>
-                <div class="content3">
-                    <div class="content_ai_section">
-                        <div id="ai_colorize"></div>
-                    </div>
-                    <div id="lottie_colorize">
-                        <lottie-player src="./resourses/img/classic/ia/ai_colorize.json" background="transparent"
-                            speed="2" loop autoplay></lottie-player>
-                    </div>
-                    <div class="content_ai_section">
-                        <div id="ai_colorize2"></div>
-                    </div>
-                </div>
-
-
-                <div class="subtitle">
-                    <h2>Edición y creación de nuevas imágenes<br> <span>Desde $3</span> </h2>
-                </div>
-                <p>Vuela tu imaginación nosotros lo hacemos una realidad</p>
-                <div class="content4">
-                    <div id="ai_transform"></div>
-                    <div id="lottie_transform">
-                        <lottie-player src="./resourses/img/classic/ia/ai_transform.json" background="transparent" speed="0.6667" loop
-                            autoplay></lottie-player>
-                    </div>
-                    <div id="ai_transform2"></div>
-                </div>
-            </div>
-
-            <div class="bg_animated">
-                <lottie-player src="/resourses/3D/geometric-animation7.json" background="transparent" speed="0.5"
-                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
-            </div>
-        </div>
-
-        <div id="marketing">
-            <div class="content">
-                <h1>RRSS</h1>
-                <h2>Manejo de Redes Sociales</h2>
-                <p>
-                    Te ayudamos a desarrollar el mejor contenido para tus redes sociales con técnicas vanguardistas que
-                    capten la atención de tu público objetivo.
-                </p>
-                <p>
-                    Vamos desde la planificación de contenidos, manejo de tus redes, creación de contenido multimedia
-                    (fotos, ilustraciones, video), hasta el reporte y análisis de resultados.
-                </p>
-                <h2><span>Desde $180</span></h2>
-            </div>
-            <div class="bg_animated">
-                <lottie-player src="/resourses/3D/geometric-animation2.json" background="transparent" speed="0.5"
-                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
-            </div>
-        </div>
-
-        <div id="examples-m">
-            <div class="content">
-                <div class="examples-m">
-                    <a href="https://www.instagram.com/blossom.fashiondesign/" target="blank">
-                        <div class="feed" id="blossom"></div>
-                    </a>
-                    <a href="https://www.instagram.com/blossom.fashiondesign/" target="blank">
-                        <div class="feed" id="isabel_lopez"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="info">
-                <p>Para más detalles sobre nuestros planes y precios haz click
-                    <a target="_blank" href="./docs/Marketing-RRSS.pdf"> AQUÍ
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <div id="multimedia">
-            <div class="content">
-                <h1>Multimedia</h1>
-                <h2>Creación de contenido audiovisual</h2>
-
-                <p>
-                    Estamos listos para ofrecete un excelente contenido audiovisual que cautive y atraiga a nuevos
-                    clientes.
-                </p>
-
-                <h2>La nueva y efectiva estrategia de marketing</h2>
-                <p>Videos cortos y directos que enganchen al público. Genera cientos o miles visualizaciones en las más
-                    populares redes, de manera que incrementes siginificativamente el alcance de tu marca en el mercado
-                </p>
-
-                <br />
-                <h2><span>Desde $300</span></h2>
-            </div>
-            <div class="bg_animated">
-                <lottie-player src="/resourses/3D/geometric-animation3.json" background="transparent" speed="0.25"
-                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
-                <lottie-player src="/resourses/3D/geometric-animation3.json" background="transparent" speed="0.5"
-                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
-            </div>
-        </div>
-
-        <div id="examples-av">
-            <div class="content">
-                <div class="examples-av">
-                    <a href="https://www.tiktok.com/@etrebelle.ec" target="blank">
-                        <video class="av_sample" autoplay muted loop>
-                            <source src="../resourses/img/portfolio/etrebelle_sample.mp4" type="video/mp4">
-                            Your browser does not support HTML video.
-                        </video>
-                    </a>
-
-                    <a href="https://www.tiktok.com/@etrebelle.ec" target="blank">
-                        <video class="av_sample" autoplay muted loop>
-                            <source src="../resourses/img/portfolio/etrebelle_sample2.mp4" type="video/mp4">
-                            Your browser does not support HTML video.
-                        </video>
-                    </a>
-                </div>
-            </div>
-            <div class="info">
-                <p>Para más detalles sobre nuestros planes y precios haz click
-                    <a target="_blank" href="./docs/Producción_Audio-Visual.pdf"> AQUÍ
-                    </a>
-                </p>
-            </div>
-        </div>
-
-        <div id="portfolio">
-            <div class="content">
-                <h1>Desarrollo</h1>
-                <h2>Desarrollo de sitios web inovadores</h2>
-                <p>
-                    Te enorgullecerás de un diseño elegante y sofisticado con una interfaz de usuario sencilla e
-                    intuitiva. que quedará grabada en la mente de tus clientes, ya que nos especializamos en el
-                    desarrollo de sitios web profesionales y modernos mediante el uso
-                    de las últimas tendencias para ofrecer un producto final excelente y a un precio justo.
-                </p>
-                <h2>Total adaptabilidad</h2>
-                <p>
-                    Contarás con adaptablidad para un acceso universal, ya sea por un dispositivo móvil o de escritorio.
-                </p>
-                <br>
-                <h2><span>Desde $300</span></h2>
-            </div>
-            <div class="bg_animated">
-                <lottie-player src="/resourses/3D/geometric-animation4.json" background="transparent" speed="0.5"
-                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
-            </div>
-        </div>
-
-        <div id="examples-wp">
-            <div class="content">
-                <div class="examples-wp">
-                    <a href="http://kelsimariep.com/" target="blank">
-                        <div class="pages" id="presentations"></div>
-                    </a>
-                    <a href="http://neopixel.studio/samples/atabey/index.php" target="blank">
-                        <div class="pages" id="atabey"></div>
-                    </a>
-                    <a href="http://neopixel.studio/samples/evento/index.php" target="blank">
-                        <div class="pages" id="events"></div>
-                    </a>
-                    <a href="http://neopixel.studio/samples/wedding/index.html" target="blank">
-                        <div class="pages" id="wedding"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="info">
-                <p>Para más detalles sobre nuestros planes, método de trabajo y precios haz click
-                    <a target="_blank" href="./docs/Des.Web_Especificaciones-Conceptos-Precios.pdf"> AQUÍ
-                    </a>
-                </p>
-            </div>
-        </div>
-
-
-        <div id="about_us">
-            <div class="content">
-                <h1>Sobre Nosotros</h1>
-                <h2>Un equipo con grandes metas</h2>
-                <p>
-                    Somos un talentoso equipo multidiciplinario que buscamos lo mismo que tú, una atención
-                    personalizada, un desarrollo de alta calidad con diseño innovador para todos tus medios digitales.
-                    Por esa razón creamos Neo Pixel Studio, el lugar donde encuentras
-                    servicios de desarrollo de páginas web, e-commerce y diseño gráfico con los más altos estándares de
-                    calidad mediante el uso de las mejores tecnologías para que tu proyecto se vea como ningún otro y
-                    que perdure en el tiempo.
-                </p>
-            </div>
-            <div class="bg_animated">
-                <lottie-player src="/resourses/3D/geometric-animation5.json" background="transparent" speed="1"
-                    style="width: 100%; height: 100%" loop autoplay></lottie-player>
-            </div>
-        </div>
-    </div>
-
-    <div id="whatsapp">
+    <div id="whatsapp-open">
         <div id="close_whatsapp">
             <svg viewbox="0 0 20 20">
                 <path class="close" d="M 5,5 L 15,15 M 15,5 L 5,15" />
@@ -330,7 +58,7 @@
             <div id="w_description">Contesta en alrededor de una hora</div>
         </div>
         <div id="container_text">
-            <div id="text">
+            <div id="cheers">
                 <p>¡Hola!, ¡Qué gusto que estés aquí!</p>
                 <p>¿Cómo puedo ayudarte?</p>
             </div>
@@ -344,43 +72,465 @@
         </div>
     </div>
 
-    <!--Screen Videos-->
+    <!-- section6 -->
+    <div id="sky">
+        <div id="ai">
+            <div class="moon">
+                <img src="/resourses/img/classic/ia/moon.png" alt="">
+            </div>
+      
+                <div id="global_ship_container" onclick="document.getElementById('about_us').scrollIntoView({behavior:'smooth', block: 'center', inline: 'nearest'});">
+                    <div class="ship_container">
+                
+                        <h2 id="text_ship">¿Ya pasaste por nuestros servicios clásicos?, ¿No?, no te preocupes, te llevamos.
+                            <br><br> <u>Presiona en la nave</u>
+                        </h2>
+                
+                        <div id="ship">
+                            <div>
+                                <lottie-player src="./resourses/img/classic/spaceship.json" background="transparent" speed="1" loop
+                                    autoplay id="lottie_spaceship"></lottie-player>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <video id="tv" autoplay loop muted>
-        <source src="./resourses/3D/resourses/tv.mp4" />
-    </video>
+            <div class="footer">
+                <div class="logo-footer"></div>
+                <div class="mail">
+                    <div class="icon"></div>
+                    <div class="nameEmail">
+                        <p>staff@neopixel.studio</p>
+                    </div>
+                </div>
+                <div class="numero">
+                    <div class="icon"></div>
+                    <div class="number">
+                        <p>+593 996639450</p>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>copyright © 2022 NeoPixelStudio</p>
+                </div>
+            </div>
 
-    <video id="ux" autoplay loop muted>
-        <source src="./resourses/3D/resourses/ux.mp4" />
-    </video>
+            <div id="space">
+                <div id="lottie_astronaut">
+                    <lottie-player src="./resourses/img/classic/ia/astronaut.json" background="transparent" speed="1"
+                        loop autoplay></lottie-player>
+                </div>
+                <div id="lottie_satellite">
+                    <lottie-player src="./resourses/img/classic/ia/satellite.json" background="transparent" speed="0.5"
+                        loop autoplay></lottie-player>
+                </div>
+            </div>
+            <div class="subtitle">
+                <h2>Edición y creación de nuevas imágenes<br> <span>Desde $3</span> </h2>
+            </div>
+            <div class="subtitle2">
+                <p>Vuela tu imaginación nosotros lo hacemos una realidad</p>
+            </div>
+            <div class="content4">
+                <div class="content_ai_section">
+                    <div id="ai_transform"></div>
+                    <div id="ai_transform2"></div>
+                </div>
+                <div id="lottie_transform">
+                    <lottie-player src="./resourses/img/classic/ia/ai_transform.json" background="transparent"
+                        speed="0.6667" loop autoplay></lottie-player>
+                </div>
+            </div>
+            <div class="subtitle">
+                <h2>Colorización de imágenes en Blanco y Negro<br> <span>Desde $3</span> </h2>
+            </div>
+            <div class="subtitle2">
+                <p>No pierdas la oportunidad de dar nueva vida a esas fotos que tantos recuerdos te traen</p>
+            </div>
+            <div class="content3">
+                <div class="content_ai_section">
+                    <div id="ai_colorize"></div>
+                </div>
+                <div id="lottie_colorize">
+                    <lottie-player src="./resourses/img/classic/ia/ai_colorize.json" background="transparent" speed="2"
+                        loop autoplay></lottie-player>
+                </div>
+                <div class="content_ai_section">
+                    <div id="ai_colorize2"></div>
+                </div>
+            </div>
+            <div class="subtitle">
+                <h2>Escalado de imágenes<br> <span>Desde $3</span> </h2>
+            </div>
+            <div class="subtitle2">
+                <p>¿Requieres escalar una imagen o video sin alterarla?, lo hacemos por ti, con un unos excelentes resultados</p>
+            </div>
+            <div class="content2">
+                <div class="content_ai_section">
+                    <div id="ai_scale"></div>
+                </div>
+                <div id="lottie_scale">
+                    <lottie-player src="./resourses/img/classic/ia/ai_scale.json" background="transparent" speed="0.2"
+                        loop autoplay></lottie-player>
+                </div>
+                <div class="content_ai_section">
+                    <div id="ai_scale2"></div>
+                </div>
+            </div>
+            <div class="subtitle">
+                <h2>Tu Ávatar Personalizado<br> <span>Desde $1</span> </h2>
+            </div>
+            <div class="subtitle2">
+                <p>Obtén tu propio ávatar personalizado, compártenos tus fotos de referencia y deja volar tu imaginación
+                    a nuevos personajes y lugares</p>
+            </div>
+            <div class="content2">
+                <div class="content_ai_section">
+                    <div id="ai_avatar"></div>
+                </div>
+                <div id="lottie_avatar">
+                    <lottie-player src="./resourses/img/classic/ia/ai_avatar.json" background="transparent" speed="1"
+                        loop autoplay>
+                    </lottie-player>
+                </div>
+                <div class="avatar_samples">
+                    <div id="avatar_sample3"></div>
+                    <div id="avatar_sample2"></div>
+                    <div id="avatar_sample1"></div>
+                </div>
+            </div>
+            <div class="title">
+                <h1>DISENO ASISTIDO </br>POR IA</h1>
+            </div>
+            <div id="atmosphere">
+                <img src="/resourses/img/classic/ia/atmosphere.png" alt="">
+            </div>
+        </div>
+        <div id="parallax">
 
-    <video id="dev" autoplay loop muted>
-        <source src="./resourses/3D/resourses/design.mp4" />
-    </video>
+            <div id="ai_trigger" onclick="document.getElementById('atmosphere').scrollIntoView({behavior:'smooth', block: 'center', inline: 'nearest'})">
+                <div class="new_services">
+                    <h3>Nuevos Servicios</h3><span>click aquí, o desplázate hacia arriba</span>
+                </div>
+                <div id="lottie_ai">
+                    <lottie-player src="./resourses/img/magic.json" background="transparent" speed="1.5" loop autoplay></lottie-player>
+                </div>
+            </div>
 
-    <video id="mult" autoplay loop muted>
-        <source src="./resourses/3D/resourses/video.mp4" />
-    </video>
+            <div class="down_arrow">
+                <h3>Mira nuestros Servicios</h3><span>desplázate hacia abajo</span>
+                <lottie-player src="./resourses/img//down_arrow.json" background="transparent" speed="1" loop
+                    autoplay>
+                </lottie-player>
+            </lottie-player>
+            </div>
 
-    <video id="us" autoplay loop muted>
-        <source src="./resourses/3D/resourses/us.mp4" />
-    </video>
+            <div id="parallax__layer__1" class="parallax__layer parallax__layer__1">
+                <img id="parallax__img" src="./resourses/img/mountains1.svg" alt="" />
+            </div>
+            <div id="parallax_layer_logo" class="parallax__layer parallax_layer_logo">
+                <img id="parallax__img" src="./resourses/img/logo_sky.png" alt="" />
+            </div>
+            <div id="parallax__layer__2" class="parallax__layer parallax__layer__2">
+                <img id="parallax__img" src="./resourses/img/mountains2.svg" alt="" />
+            </div>
+            <div id="parallax__layer__3" class="parallax__layer parallax__layer__3">
+                <img id="parallax__img" src="./resourses/img/mountains3.svg" alt="" />
+            </div>
+            <div id="parallax__layer__4" class="parallax__layer parallax__layer__4">
+                <img id="parallax__img" src="./resourses/img/city_behind.svg" alt="" />
+            </div>
+            <div id="parallax__layer__5" class="parallax__layer parallax__layer__5">
+                <img id="parallax__img" src="./resourses/img/citycenter.svg" alt="" />
+            </div>
+            <div id="parallax__layer__6" class="parallax__layer parallax__layer__6">
+                <img id="parallax__img" src="./resourses/img/city_front1.svg" alt="" />
+            </div>
+            <div id="parallax__layer__7" class="parallax__layer parallax__layer__7">
+                <img id="parallax__img" src="./resourses/img/city_front2.svg" alt="" />
+            </div>
+            <div id="parallax__layer__8" class="parallax__layer parallax__layer__8 interactive">
+                <img id="parallax__img" src="./resourses/img/interactive/blds.svg" alt="" />
+            </div>
+            <div id="parallax__layer__ground1" class="parallax__layer parallax__layer__ground1 interactive">
+                <div id="floor1"></div>
+            </div>
+            <div id="parallax__layer__ground2" class="parallax__layer parallax__layer__ground2 interactive">
+                <div id="floor2"></div>
+            </div>
+            <div id="parallax__layer__ground3" class="parallax__layer parallax__layer__ground3 interactive">
+                <div id="floor3"></div>
+            </div>
+            <div id="parallax__layer__ground4" class="parallax__layer parallax__layer__ground4 interactive">
+                <div id="floor4"></div>
+            </div>
 
-    <video id="comunication" autoplay loop muted>
-        <source src="./resourses/3D/resourses/comunication.mp4" />
-    </video>
+            <!--3D-->
+            <div id="bld_nxs" class="interactive"></div>
+            <!-- -->
+
+            <div id="classic">
+
+                <!-- section1 -->
+                <div id="about_us" class="section-b">
+                    <div class="title">
+                        <h1>Bienvenidos</h1>
+                    </div>
+                    <div class="content">
+                        <div class="text">
+                            <div class="subtitle">
+                                <h2>Somos Neo Pixel Studio</h2>
+                            </div>
+                            <div class="paragraph">
+                                <p>Estamos aquí para brindarte el mejor servicio de desarrollo de páginas web, manejo de
+                                    redes sociales y creación de contenido multimedia.
+                                </p>
+                                <p>Además, te brindamos asesoría en el manejo de tu marca, para que todo aquello que
+                                    desees promocionar al mundo lo hagas de una manera ¡espectacular!</p>
+                            </div>
+                        </div>
+
+                        <div id="lottie_presentation">
+                            <lottie-player src="./resourses/img/classic/web-design.json" background="transparent"
+                                speed="1.5" loop autoplay></lottie-player>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-b"></div>
+
+                <!-- section2 -->
+                <div class="step">
+                    <div class="triangle-t">
+                        <img src="./resourses/img/classic/step_triangle1.svg" alt="">
+                    </div>
+                    <div id="promises" class="section-w">
+                        <div class="subtitle">
+                            <h1>Te ofrecemos</h1>
+                        </div>
+                        <div class="content">
+                            <div class="service">
+                                <div class="lottie">
+                                    <lottie-player src="./resourses/img/classic/offer/growing.json"
+                                        background="transparent" speed="1.5" loop autoplay></lottie-player>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>Impulso a tu negocio</h2>
+                                </div>
+                                <div class="subtitle2">
+                                    <p>Date a conocer sin barreras de tiempo o distancia compartiendo contenido a través
+                                        de tus redes o página web</p>
+                                </div>
+                            </div>
+                            <div class="service">
+                                <div class="lottie">
+                                    <lottie-player src="./resourses/img/classic/offer/design.json"
+                                        background="transparent" speed="1.5" loop autoplay></lottie-player>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>Diseño innovador</h2>
+                                </div>
+                                <div class="subtitle2">
+                                    <p>Te enorgullecerás de un diseño elegante y sofisticado que quedará grabado en la
+                                        mente de tus clientes</p>
+                                </div>
+                            </div>
+                            <div class="service">
+                                <div class="lottie">
+                                    <lottie-player src="./resourses/img/classic/offer/ux.json" background="transparent"
+                                        speed="1.5" loop autoplay></lottie-player>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>Toda una experiencia</h2>
+                                </div>
+                                <div class="subtitle2">
+                                    <p>Brindarás una experiencia única que encantará a tus clientes</p>
+                                </div>
+                            </div>
+                            <div class="service">
+                                <div class="lottie">
+                                    <lottie-player src="./resourses/img/classic/offer/responsive.json"
+                                        background="transparent" speed="1.5" loop autoplay></lottie-player>
+                                </div>
+                                <div class="subtitle">
+                                    <h2>Para todo dispositivo</h2>
+                                </div>
+                                <div class="subtitle2">
+                                    <p>Adaptabilidad de todo tu contenido para un acceso universal, ya sea por un
+                                        dispositivo móvil o de escritorio</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="space-w"></div>
+                    </div>
+                    <div class="triangle-b">
+                        <img src="./resourses/img/classic/step_triangle2.svg" alt="">
+                    </div>
+                </div>
+
+                <!-- section3 -->
+                <div class="section-b desarrollo">
+                    <div class="title">
+                        <h1>Desarrollo</h1>
+                    </div>
+                    <div class="subtitle">
+                        <h2>Cualquiera sea tu mercado<br> <span>Desde $300</span> </h2>
+                    </div>
+                    <div class="subtitle2">
+                        <p>Coméntanos tus requerimientos, nosotros los transformaremos en realidad</p>
+                    </div>
+                    <div class="space-b"></div>
+                    <div class="content">
+                        <a target="_blank" href="http://neopixel.studio/samples/atabey/index.php">
+                            <div class="sample" id="atabey"></div>
+                        </a>
+                        <a target="_blank" href="http://neopixel.studio/samples/evento/index.php">
+                            <div class="sample" id="eventos"></div>
+                        </a>
+                        <a target="_blank" href="http://neopixel.studio/samples/wedding/index.html">
+                            <div class="sample" id="wedding"></div>
+                        </a>
+                        <a target="_blank" href="http://www.kelsimariep.com">
+                            <div class="sample" id="moda"></div>
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p>Para más detalles sobre nuestros planes, método de trabajo y precios haz click
+                            <a target="_blank" href="./docs/Des.Web_Especificaciones-Conceptos-Precios.pdf"> AQUÍ
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-b"></div>
+
+                <!-- section4 -->
+                <div class="triangle-t">
+                    <img src="./resourses/img/classic/step_triangle1.svg" alt="">
+                </div>
+                <div class="section-w marketing">
+                    <div class="title">
+                        <h1>RRSS</h1>
+                    </div>
+                    <div class="subtitle">
+                        <h2>Manejo de tus redes sociales<br> <span>Desde $180</span> </h2>
+                    </div>
+                    <div class="subtitle2">
+                        <p>Te ayudamos a desarrollar y manejar el mejor contenido para tus redes sociales con
+                            estrategias vanguardistas que capten la atención de tu público objetivo</p>
+                    </div>
+                    <div class="space-w"></div>
+                    <div class="content">
+                        <a target="_blank" href="https://www.instagram.com/blossom.fashiondesign/">
+                            <div class="feed" id="blossom"></div>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/isabellopezjoyeria/">
+                            <div class="feed" id="isabel_lopez"></div>
+                        </a>
+                    </div>
+                    <div class="info">
+                        <p>Para más detalles sobre nuestros planes y precios haz click
+                            <a target="_blank" href="./docs/Marketing-RRSS.pdf"> AQUÍ
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-w"></div>
+                <div class="triangle-b">
+                    <img src="./resourses/img/classic/step_triangle2.svg" alt="">
+                </div>
+
+                <!-- section5 -->
+                <div class="section-b desarrollo">
+                    <div class="title">
+                        <h1>Multimedia</h1>
+                    </div>
+                    <div class="subtitle">
+                        <h2>El contenido publicitario que necesitas<br> <span>Desde $300</span> </h2>
+                    </div>
+                    <div class="subtitle2">
+                        <p>Fotografía, video, contenido multimedia que facinará a tus clientes</p>
+                    </div>
+                    <div class="space-b"></div>
+                    <div class="content">
+                        <div class="tiktok">
+                            <a href="https://www.tiktok.com/@etrebelle.ec" target="blank">
+                                <video class="etrebelle" autoplay muted loop>
+                                    <source src="../resourses/img/portfolio/etrebelle_sample.mp4" type="video/mp4">
+                                    Your browser does not support HTML video.
+                                </video>
+                            </a>
+                        </div>
+
+                        <div class="tiktok">
+                            <a href="https://www.tiktok.com/@etrebelle.ec" target="blank">
+                                <video class="etrebelle" autoplay muted loop>
+                                    <source src="../resourses/img/portfolio/etrebelle_sample2.mp4" type="video/mp4">
+                                    Your browser does not support HTML video.
+                                </video>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="info">
+                        <p>Para más detalles sobre nuestros planes, método de trabajo y precios haz click
+                            <a target="_blank" href="./docs/Producción_Audio-Visual.pdf"> AQUÍ
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-b"></div>
+
+                <div id="portal_container">
+                
+                        <div id="popup_forUp">
+                            <h2 id="text_container">¿Ya pasaste por nuestros nuevos servicios?, ¿No?, no te preocupes, te llevamos.
+                                <br><br> <u>Entra en el portal</u>
+                                <br><br>Cuando llegues recuerda seguir subiendo ☺
+                            </h2>
+                        </div>
+                        <div onclick="document.getElementById('atmosphere').scrollIntoView({behavior:'smooth', block: 'center', inline: 'nearest'});">
+                            <lottie-player src="./resourses/img/classic/portal.json" background="transparent" speed="1" loop autoplay
+                                id="lottie_portal"></lottie-player>
+                        </div>
+                </div>
+
+                <div class="space-b"></div>
+
+                <div class="footer">
+                    <div class="logo-footer"></div>
+                    <div class="mail">
+                        <div class="icon"></div>
+                        <div class="nameEmail">
+                            <p>staff@neopixel.studio</p>
+                        </div>
+                    </div>
+                    <div class="numero">
+                        <div class="icon"></div>
+                        <div class="number">
+                            <p>+593 996639450</p>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>copyright © 2022 NeoPixelStudio</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
-
-<!--Scripts-->
-
-<script src="./js/3D_page_functions.js"></script>
 
 <!--3D-->
 <script src="./js/three.min.js"></script>
 <script src="./js/GLTFLoader.js"></script>
-<script src="./js/dat.gui.min.js"></script>
-<script src="./js/OrbitControls.js"></script>
-<script src="./js/3D_inside.js"></script>
+<script src="./js/index.js"></script>
+<!---->
 
+<!-- sky -->
+<script src="./js/sky.js"></script>
+<!---->
 
 </html>

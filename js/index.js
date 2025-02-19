@@ -93,7 +93,7 @@ function trigger() {
     copyright[2].appendChild(copyrightName_creation);
 
     document.querySelector('#enter').addEventListener('click', function() {
-        location.href = './office.html'
+        location.href = './index.html'
     });
 }
 
