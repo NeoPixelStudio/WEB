@@ -46,12 +46,15 @@
 }
 
 #lottie_spaceship {
-    transform: rotate(180deg);
-    max-width: 300px;
-    max-height: 300px;
+    transform: rotate(0deg);
+}
+
+#text_ship {
+    color: white;
 }
 
 #lottie_portal {
+    transform: rotate(180deg);
     max-width: 300px;
     max-height: 300px;
     margin: auto;

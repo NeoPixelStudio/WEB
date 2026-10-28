@@ -249,7 +249,12 @@ span {
     display: block;
     position: absolute;
     bottom: 0;
-    height: 30vh;
+}
+
+@media (orientation: portrait) {
+    #parallax__img {
+        height: 30vh;
+    }
 }
 
 .parallax_layer_logo {
