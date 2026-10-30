@@ -95,6 +95,50 @@ function trigger() {
     document.querySelector('#enter').addEventListener('click', function() {
         location.href = './index.html'
     });
+
+    loadInteractive3D();
+}
+
+var interactive3DLoading = false;
+var interactive3DLoaded = false;
+
+function loadInteractive3D() {
+    if (interactive3DLoading || interactive3DLoaded) {
+        return;
+    }
+
+    interactive3DLoading = true;
+    var scripts = [
+        './js/three.min.js',
+        './js/GLTFLoader.js',
+        './js/interactive-3d.js'
+    ];
+
+    function loadNextScript(index) {
+        if (index === scripts.length) {
+            interactive3DLoaded = true;
+            interactive3DLoading = false;
+            return;
+        }
+
+        var script = document.createElement('script');
+        script.src = scripts[index];
+        script.onload = function() {
+            loadNextScript(index + 1);
+        };
+        script.onerror = function() {
+            interactive3DLoading = false;
+            console.error('Unable to load the interactive 3D experience: ' + scripts[index]);
+
+            var message = document.createElement('p');
+            message.textContent = 'No se pudo cargar la experiencia interactiva. Recarga la página e inténtalo de nuevo.';
+            message.style.cssText = 'position:fixed;z-index:10001;top:1rem;left:1rem;right:1rem;padding:1rem;background:#fff;color:#000;text-align:center;';
+            document.body.appendChild(message);
+        };
+        document.body.appendChild(script);
+    }
+
+    loadNextScript(0);
 }
 
 //Unblock page and effects
@@ -127,136 +171,4 @@ function unlock() {
 
         $('#ai_trigger').hide(time_effect1);
     })
-}
-
-/****************************/
-
-
-//Global variables
-var _docHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;
-var _docWidth = (document.width !== undefined) ? document.width : document.body.offsetWidth;
-
-/**Add to Doc & Measure**/
-
-let container;
-container = document.querySelector('#bld_nxs');
-
-var scene = new THREE.Scene();
-
-var renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
-container.appendChild(renderer.domElement);
-
-/***Loader***/
-
-let loader = new THREE.GLTFLoader();
-loader.load("../resourses/3D/scene_min.gltf", function(gltf) {
-    scene.add(gltf.scene);
-    renderer.render(scene, camera);
-})
-
-/***Camera Perspective***/
-
-const fov = 50;
-const aspect = container.clientWidth / container.clientHeight;
-const near = 10;
-const far = 5000;
-var cam_angle_init = -0.35;
-camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-
-// Camera Height
-const cam_height_init = 1200;
-camera.position.set(0, cam_height_init, 2000);
-camera.rotation.set(cam_angle_init, 0, 0);
-
-
-/***lights***/
-
-var light = new THREE.DirectionalLight(new THREE.Color('hsl(0, 0%, 100%)'), 0.25);
-light.position.set(0, 1, -1);
-
-scene.add(light);
-
-const ambient = new THREE.AmbientLight(0xFFFFFF, 0.75);
-scene.add(ambient);
-
-/***Animation Height, Angle, Zoom***/
-
-// Render
-function render() {
-    requestAnimationFrame(render);
-
-    // Angle & Height
-
-    const speed_cam_change = 750;
-    const speed_angle_change = 0.004;
-    const speed_height_change = 7;
-
-    var cam_angle = -0.35;
-    /*Breakpoint*/
-    const b = 0;
-
-    if (window.pageYOffset > 0 && $('#classic:visible').length == 0) {
-        document.getElementById('whatsapp').style.display = 'none';
-        document.getElementById('enter').style.display = 'block';
-        camera.position.y = cam_height_init - (window.pageYOffset * speed_height_change);
-        cam_angle += (window.pageYOffset * speed_angle_change);
-        camera.rotation.set(cam_angle, 0, 0);
-        var scrolled = (window.pageYOffset / speed_cam_change) + 1;
-        transformValue = 'scale(' + scrolled + ')';
-        container.style.transform = transformValue;
-        $("html, body").animate({ scrollTop: $('#trigger').offset().top }, 4500);
-        //Animation align landscape
-        $("#parallax__layer__1").animate({ top: "500vh" }, 1000);
-        $("#parallax__layer__2").animate({ top: "475vh" }, 1000);
-        $("#parallax__layer__3").animate({ top: "475vh" }, 1000);
-        $("#parallax__layer__4").animate({ top: "460vh" }, 1000);
-        $("#parallax__layer__5").animate({ top: "475vh" }, 1000);
-        $("#parallax__layer__6").animate({ top: "465vh" }, 1000);
-        $("#parallax__layer__7").animate({ top: "465vh" }, 1000);
-        $("#parallax__layer__8").animate({ top: "423vh" }, 1000);
-        $("#parallax__layer__ground1").animate({ top: "410vh" }, 1000);
-        $("#floor1").animate({ height: "15vh" }, 1000);
-        $("#parallax__layer__ground2").animate({ top: "425vh" }, 1000);
-        $("#floor2").animate({ height: "15vh" }, 1000);
-        $("#parallax__layer__ground3").animate({ top: "435vh" }, 1000);
-        $("#floor3").animate({ height: "15vh" }, 1000);
-        $("#parallax__layer__ground4").animate({ top: "440vh" }, 1000);
-        $("#floor4").animate({ height: "15vh" }, 1000);
-        /*console.log(cam_angle);*/
-        /*console.log(camera.position.y);*/
-        /*console.log(scrolled);*/
-        if (cam_angle > b) {
-            camera.rotation.set(-0.02, 0, 0);
-            camera.position.y = 600;
-            document.getElementById("parallax").style.overflowY = "hidden";
-            document.body.style.overflowY = "hidden";
-        }
-    } else {
-        camera.rotation.set(cam_angle_init, 0, 0);
-        camera.position.y = cam_height_init;
-        container.style.transform = "scale(1)";
-    }
-
-    renderer.render(scene, camera);
-}
-
-render();
-
-/***Resize***/
-
-window.addEventListener('resize', onWindowResize);
-
-function onWindowResize() {
-
-    const canvasWidth = window.innerWidth;
-    const canvasHeight = window.innerHeight;
-
-    renderer.setSize(canvasWidth, canvasHeight);
-
-    camera.aspect = canvasWidth / canvasHeight;
-    camera.updateProjectionMatrix();
-
-    render();
 }

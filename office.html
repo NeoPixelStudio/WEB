@@ -83,7 +83,7 @@
                         <h2 id="text_ship">¿Ya pasaste por nuestros servicios clásicos?, ¿No?, no te preocupes, te llevamos.
                             <br><br> <u>Entra en el portal</u>
                         </h2>
-                        <div onclick="document.getElementById('about_us').scrollIntoView({behavior:'smooth', block: 'center', inline: 'nearest'});">
+                        <div onclick="enterPortal()">
                             <lottie-player src="./resourses/img/classic/portal.json" background="transparent" speed="1" loop autoplay
                                 id="lottie_portal"></lottie-player>
                         </div>
@@ -519,13 +519,11 @@
             </div>
         </div>
     </div>
+    <div id="portal-transition" aria-hidden="true"></div>
+    <script src="./js/portal-transition.js"></script>
 </body>
 
-<!--3D-->
-<script src="./js/three.min.js"></script>
-<script src="./js/GLTFLoader.js"></script>
 <script src="./js/index.js"></script>
-<!---->
 
 <!-- sky -->
 <script src="./js/sky.js"></script>

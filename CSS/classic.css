@@ -69,6 +69,29 @@
     align-items: center;
 }
 
+#portal-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 10002;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 1150ms ease, visibility 0s linear 1150ms;
+}
+
+#portal-transition.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1150ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #portal-transition {
+        transition: none;
+    }
+}
+
 @media (orientation: portrait) {
     #portal_container {
         margin-top: -8vh;
